@@ -1,0 +1,40 @@
+#spring:
+#  datasource:
+#    url: jdbc:sqlserver://0.0.0.0:1433;databaseName=Care4You
+#    username: sa
+#    password: Password1!
+#    platform: mssql
+#    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    hikari:
+#      schema: dbo
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    database: SQL_SERVER
+#    show-sql: true
+
+spring:
+  application:
+    name: cat-service-persistence
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/cat-service
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: diplomadodhv2@gmail.com
+    password: Password1,.-
+
+    properties:
+      mail:
+        debug: false
+        smtp:
+          auth: true
+          starttls:
+            enable: true
