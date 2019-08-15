@@ -1,0 +1,21 @@
+---
+- hosts: webservers
+  user: root
+
+  tasks:
+   - name: Install JAVA 8
+     apt:
+      name: openjdk-8-jre
+      state: present
+   - name: Install MAVEN
+     apt:
+      name: mvn
+      state: present
+   - name: Copey artifact
+     copy:
+      src: /home/oxboxes/Documents/build/mave-project-0.0.1-SNAPSHOT.jar
+      dest: /home/oxboxes/Documents/build/
+   - name: Run webpage
+     shell: java -jar /home/oxboxes/Documents/build/mave-project-0.0.1-SNAPSHOT.jar
+     async: 2592000
+     poll: 0
